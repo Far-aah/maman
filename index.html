@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Joyeux anniversaire Maman 🎀</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* ==================================================
+           GENERAL
+        ================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            font-family: "Poppins", sans-serif;
+
+            color: #8e3159;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    #ffd1e4 0%,
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 80% 30%,
+                    #ffc2dc 0%,
+                    transparent 25%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #ffc6df,
+                    #fff0f7,
+                    #ffd0e5
+                );
+
+        }
+
+
+        /* ==================================================
+           SCREENS
+        ================================================== */
+
+        .screen {
+
+            display: none;
+
+            min-height: 100vh;
+
+            width: 100%;
+
+            justify-content: center;
+
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 40px 20px;
+
+        }
+
+
+        .screen.active {
+
+            display: flex;
+
+        }
+
+
+        .content {
+
+            width: min(950px, 100%);
+
+            text-align: center;
+
+            position: relative;
+
+            z-index: 10;
+
+        }
+
+
+        /* ==================================================
+           FLOATING BACKGROUND
+        ================================================== */
+
+        .background-decorations {
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: 1;
+
+        }
+
+
+        .background-decorations span {
+
+            position: absolute;
+
+            font-size: 25px;
+
+            opacity: 0.6;
+
+            animation:
+                floating 5s ease-in-out infinite;
+
+        }
+
+
+        .heart1 {
+            left: 7%;
+            top: 12%;
+        }
+
+
+        .heart2 {
+            right: 10%;
+            top: 20%;
+            animation-delay: 1s !important;
+        }
+
+
+        .heart3 {
+            left: 12%;
+            bottom: 15%;
+            animation-delay: 2s !important;
+        }
+
+
+        .heart4 {
+            right: 12%;
+            bottom: 12%;
+            animation-delay: 3s !important;
+        }
+
+
+        @keyframes floating {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0)
+                    rotate(-5deg);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-20px)
+                    rotate(8deg);
+
+            }
+
+        }
+
+
+        /* ==================================================
+           STICKERS
+        ================================================== */
+
+        .sticker {
+
+            position: fixed;
+
+            width: 110px;
+
+            z-index: 5;
+
+            pointer-events: none;
+
+            animation:
+                stickerFloat 4s ease-in-out infinite;
+
+        }
+
+
+        .sticker img {
+
+            width: 100%;
+
+            height: auto;
+
+            display: block;
+
+        }
+
+
+        .sticker-left {
+
+            left: 2%;
+
+            top: 10%;
+
+        }
+
+
+        .sticker-right {
+
+            right: 2%;
+
+            top: 16%;
+
+            animation-delay: 1s;
+
+        }
+
+
+        .sticker-bottom-left {
+
+            left: 3%;
+
+            bottom: 10%;
+
+            animation-delay: 2s;
+
+        }
+
+
+        @keyframes stickerFloat {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0)
+                    rotate(-5deg);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-15px)
+                    rotate(5deg);
+
+            }
+
+        }
+
+
+        /* ==================================================
+           SCREEN 1
+        ================================================== */
+
+        .kitty-main {
+
+            width: 150px;
+
+            height: 150px;
+
+            object-fit: contain;
+
+            margin-bottom: 20px;
+
+            animation:
+                kittyFloat 3s ease-in-out infinite;
+
+        }
+
+
+        @keyframes kittyFloat {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-15px);
+
+            }
+
+        }
+
+
+        .welcome {
+
+            font-family: "Pacifico", cursive;
+
+            font-size:
+                clamp(
+                    42px,
+                    8vw,
+                    75px
+                );
+
+            color: #e84288;
+
+            text-shadow:
+                3px 3px white;
+
+        }
+
+
+        .welcome-text {
+
+            font-size: 18px;
+
+            margin-top: 15px;
+
+        }
+
+
+        /* ==================================================
+           BUTTONS
+        ================================================== */
+
+        .main-button {
+
+            margin-top: 30px;
+
+            padding:
+                15px
+                30px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ef5798,
+                    #e83f84
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 25px
+                rgba(180, 50, 110, 0.25);
+
+            transition: 0.3s;
+
+        }
+
+
+        .main-button:hover {
+
+            transform:
+                scale(1.06)
+                translateY(-3px);
+
+        }
+
+
+        /* ==================================================
+           SCREEN 2
+        ================================================== */
+
+        .birthday-title {
+
+            font-family:
+                "Pacifico",
+                cursive;
+
+            font-size:
+                clamp(
+                    45px,
+                    9vw,
+                    90px
+                );
+
+            line-height: 1.15;
+
+            color: #ed4f91;
+
+            text-shadow:
+                4px 4px white,
+                0 10px 20px
+                rgba(200, 50, 110, 0.15);
+
+            animation:
+                titleAppear 1.2s ease;
+
+        }
+
+
+        @keyframes titleAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    scale(0.5)
+                    rotate(-10deg);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    scale(1)
+                    rotate(0);
+
+            }
+
+        }
+
+
+        .birthday-subtitle {
+
+            margin-top: 20px;
+
+            font-size: 19px;
+
+        }
+
+
+        /* ==================================================
+           CAKE
+        ================================================== */
+
+        .cake {
+
+            width: 220px;
+
+            height: 180px;
+
+            margin:
+                35px
+                auto;
+
+            position: relative;
+
+        }
+
+
+        .cake-layer {
+
+            position: absolute;
+
+            border:
+                5px solid white;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    #ff9ac5,
+                    #f56ca9
+                );
+
+            box-shadow:
+                0 10px 20px
+                rgba(150, 40, 90, 0.15);
+
+        }
+
+
+        .cake-bottom {
+
+            width: 200px;
+
+            height: 65px;
+
+            left: 10px;
+
+            bottom: 0;
+
+        }
+
+
+        .cake-middle {
+
+            width: 150px;
+
+            height: 55px;
+
+            left: 35px;
+
+            bottom: 55px;
+
+            background:
+                #ff9bc5;
+
+        }
+
+
+        .cake-top {
+
+            width: 100px;
+
+            height: 45px;
+
+            left: 60px;
+
+            bottom: 100px;
+
+            background:
+                #ffb5d2;
+
+        }
+
+
+        .candle {
+
+            position: absolute;
+
+            width: 10px;
+
+            height: 35px;
+
+            background: white;
+
+            border-radius: 5px;
+
+            bottom: 140px;
+
+        }
+
+
+        .candle1 {
+            left: 82px;
+        }
+
+
+        .candle2 {
+            left: 108px;
+        }
+
+
+        .candle3 {
+            left: 134px;
+        }
+
+
+        .flame {
+
+            position: absolute;
+
+            bottom: 168px;
+
+            font-size: 24px;
+
+            animation:
+                flame 0.8s
+                infinite alternate;
+
+        }
+
+
+        .flame1 {
+            left: 74px;
+        }
+
+
+        .flame2 {
+            left: 100px;
+        }
+
+
+        .flame3 {
+            left: 126px;
+        }
+
+
+        @keyframes flame {
+
+            from {
+
+                transform:
+                    scale(1);
+
+            }
+
+            to {
+
+                transform:
+                    scale(1.25);
+
+            }
+
+        }
+
+
+        /* ==================================================
+           SCREEN 3 - PHOTOS
+        ================================================== */
+
+        .photos-title {
+
+            font-family:
+                "Pacifico",
+                cursive;
+
+            font-size:
+                clamp(
+                    38px,
+                    6vw,
+                    52px
+                );
+
+            color: #e84f91;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .photo-area {
+
+            width:
+                min(
+                    900px,
+                    95vw
+                );
+
+            height: 400px;
+
+            margin: auto;
+
+            position: relative;
+
+        }
+
+
+        .polaroid {
+
+            position: absolute;
+
+            background: white;
+
+            width: 190px;
+
+            padding:
+                10px
+                10px
+                32px;
+
+            box-shadow:
+                0 15px 30px
+                rgba(100, 30, 70, 0.2);
+
+            animation:
+                photoFloat 4s
+                ease-in-out infinite;
+
+            transition: 0.5s;
+
+        }
+
+
+        .polaroid img {
+
+            width: 100%;
+
+            height: 165px;
+
+            object-fit: cover;
+
+            background:
+                #ffd9e8;
+
+        }
+
+
+        .polaroid span {
+
+            display: block;
+
+            margin-top: 10px;
+
+            font-family:
+                "Pacifico",
+                cursive;
+
+            color: #d7447d;
+
+        }
+
+
+        .photo1 {
+
+            left: 4%;
+
+            top: 20px;
+
+            transform:
+                rotate(-10deg);
+
+        }
+
+
+        .photo2 {
+
+            left:
+                calc(50% - 95px);
+
+            top: 75px;
+
+            transform:
+                rotate(5deg);
+
+            animation-delay:
+                1s;
+
+        }
+
+
+        .photo3 {
+
+            right: 4%;
+
+            top: 10px;
+
+            transform:
+                rotate(10deg);
+
+            animation-delay:
+                2s;
+
+        }
+
+
+        .polaroid:hover {
+
+            transform:
+                scale(1.1)
+                rotate(0deg);
+
+            z-index: 50;
+
+        }
+
+
+        @keyframes photoFloat {
+
+            0%,
+            100% {
+
+                margin-top: 0;
+
+            }
+
+            50% {
+
+                margin-top: -15px;
+
+            }
+
+        }
+
+
+        /* ==================================================
+           SCREEN 4 - ENVELOPE
+        ================================================== */
+
+        .envelope {
+
+            width: 300px;
+
+            height: 200px;
+
+            background:
+                #ff83b4;
+
+            border-radius: 18px;
+
+            position: relative;
+
+            cursor: pointer;
+
+            margin:
+                25px
+                auto;
+
+            box-shadow:
+                0 20px 40px
+                rgba(150, 40, 90, 0.25);
+
+            transition: 0.5s;
+
+        }
+
+
+        .envelope:hover {
+
+            transform:
+                translateY(-8px)
+                rotate(-2deg);
+
+        }
+
+
+        .envelope-flap {
+
+            position: absolute;
+
+            top: 0;
+
+            width: 0;
+
+            height: 0;
+
+            border-left:
+                150px solid transparent;
+
+            border-right:
+                150px solid transparent;
+
+            border-top:
+                110px solid #ffb0cf;
+
+            transform-origin:
+                top;
+
+            transition: 0.7s;
+
+            z-index: 3;
+
+        }
+
+
+        .envelope.open
+        .envelope-flap {
+
+            transform:
+                rotateX(180deg);
+
+        }
+
+
+        .envelope-heart {
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 52%;
+
+            transform:
+                translate(
+                    -50%,
+                    -50%
+                );
+
+            font-size: 50px;
+
+            z-index: 5;
+
+        }
+
+
+        .click-text {
+
+            font-weight: 600;
+
+            margin-top: 15px;
+
+        }
+
+
+        /* ==================================================
+           LETTER
+        ================================================== */
+
+        .letter {
+
+            display: none;
+
+            width:
+                min(
+                    700px,
+                    94vw
+                );
+
+            margin:
+                25px auto 0;
+
+            padding: 35px;
+
+            background:
+                #fffafd;
+
+            border:
+                3px solid #ffc1da;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 20px 50px
+                rgba(150, 40, 90, 0.2);
+
+            text-align: left;
+
+            animation:
+                letterAppear 1s ease;
+
+        }
+
+
+        .letter.show {
+
+            display: block;
+
+        }
+
+
+        .letter h2 {
+
+            text-align: center;
+
+            font-family:
+                "Pacifico",
+                cursive;
+
+            color: #e94f91;
+
+            font-size: 35px;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .letter p {
+
+            line-height: 1.8;
+
+            font-size: 16px;
+
+        }
+
+
+        .paris {
+
+            text-align: center;
+
+            color: #e94f91;
+
+            font-weight: 600;
+
+            font-size: 20px !important;
+
+            margin:
+                20px 0;
+
+        }
+
+
+        .signature {
+
+            text-align: center;
+
+            margin-top: 25px;
+
+            font-family:
+                "Pacifico",
+                cursive;
+
+            color: #d33d77;
+
+            font-size: 20px;
+
+        }
+
+
+        @keyframes letterAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(35px)
+                    scale(0.9);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+
+            }
+
+        }
+
+
+        /* ==================================================
+           MUSIC
+        ================================================== */
+
+        .music-player {
+
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            z-index: 100;
+
+        }
+
+
+        .music-button {
+
+            border: none;
+
+            border-radius: 50px;
+
+            padding:
+                13px
+                20px;
+
+            background: white;
+
+            color: #d8437e;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+            box-shadow:
+                0 8px 20px
+                rgba(100, 30, 60, 0.15);
+
+            transition: 0.3s;
+
+        }
+
+
+        .music-button:hover {
+
+            transform:
+                scale(1.05);
+
+        }
+
+
+        /* ==================================================
+           CONFETTI
+        ================================================== */
+
+        .confetti {
+
+            position: fixed;
+
+            top: -30px;
+
+            z-index: 200;
+
+            font-size: 20px;
+
+            pointer-events: none;
+
+            animation:
+                fall 4s linear
+                forwards;
+
+        }
+
+
+        @keyframes fall {
+
+            to {
+
+                transform:
+                    translateY(110vh)
+                    rotate(720deg);
+
+                opacity: 0;
+
+            }
+
+        }
+
+
+        /* ==================================================
+           RESPONSIVE
+        ================================================== */
+
+        @media (max-width: 650px) {
+
+            .sticker {
+
+                width: 65px;
+
+            }
+
+
+            .kitty-main {
+
+                width: 110px;
+
+                height: 110px;
+
+            }
+
+
+            .photo-area {
+
+                height: 350px;
+
+            }
+
+
+            .polaroid {
+
+                width: 125px;
+
+                padding:
+                    7px
+                    7px
+                    24px;
+
+            }
+
+
+            .polaroid img {
+
+                height: 110px;
+
+            }
+
+
+            .photo1 {
+
+                left: 0;
+
+            }
+
+
+            .photo2 {
+
+                left:
+                    calc(50% - 62px);
+
+                top: 95px;
+
+            }
+
+
+            .photo3 {
+
+                right: 0;
+
+            }
+
+
+            .letter {
+
+                padding:
+                    25px 20px;
+
+            }
+
+
+            .envelope {
+
+                width: 250px;
+
+                height: 165px;
+
+            }
+
+
+            .envelope-flap {
+
+                border-left-width: 125px;
+
+                border-right-width: 125px;
+
+                border-top-width: 90px;
+
+            }
+
+
+            .music-player {
+
+                right: 10px;
+
+                bottom: 10px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     DECORATIONS
+================================================== -->
+
+<div class="background-decorations">
+
+    <span class="heart1">💗</span>
+
+    <span class="heart2">🎀</span>
+
+    <span class="heart3">💕</span>
+
+    <span class="heart4">✨</span>
+
+</div>
+
+
+<!-- ==================================================
+     GIF HELLO KITTY
+================================================== -->
+
+<div class="sticker sticker-left">
+
+    <img
+        src="images/hello-kitty.gif"
+        alt="Hello Kitty"
+    >
+
+</div>
+
+
+<!-- ==================================================
+     GIF PATRICK
+================================================== -->
+
+<div class="sticker sticker-right">
+
+    <img
+        src="images/patrick.gif"
+        alt="Patrick"
+    >
+
+</div>
+
+
+<!-- ==================================================
+     GIF KITTY KISS
+================================================== -->
+
+<div class="sticker sticker-bottom-left">
+
+    <img
+        src="images/kitty-kiss.gif"
+        alt="Kitty Kiss"
+    >
+
+</div>
+
+
+<!-- ==================================================
+     SCREEN 1
+================================================== -->
+
+<section
+    class="screen active"
+    id="screen1"
+>
+
+    <div class="content">
+
+
+        <img
+            src="images/hello-kitty.gif"
+            alt="Hello Kitty"
+            class="kitty-main"
+        >
+
+
+        <h1 class="welcome">
+
+            Une petite surprise...
+
+        </h1>
+
+
+        <p class="welcome-text">
+
+            Pour une personne très spéciale 💗
+
+        </p>
+
+
+        <button
+            class="main-button"
+            onclick="goToScreen(2)"
+        >
+
+            🎀 Ouvrir ma surprise 🎀
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     SCREEN 2
+================================================== -->
+
+<section
+    class="screen"
+    id="screen2"
+>
+
+    <div class="content">
+
+
+        <div class="birthday-title">
+
+            HAPPY<br>
+
+            BIRTHDAY<br>
+
+            Maman 🎀
+
+        </div>
+
+
+        <p class="birthday-subtitle">
+
+            🎉 Aujourd'hui est une journée spéciale 🎉
+
+        </p>
+
+
+        <!-- CAKE -->
+
+        <div class="cake">
+
+
+            <div class="flame flame1">
+
+                🔥
+
+            </div>
+
+
+            <div class="flame flame2">
+
+                🔥
+
+            </div>
+
+
+            <div class="flame flame3">
+
+                🔥
+
+            </div>
+
+
+            <div class="candle candle1"></div>
+
+            <div class="candle candle2"></div>
+
+            <div class="candle candle3"></div>
+
+
+            <div
+                class="cake-layer cake-top"
+            ></div>
+
+
+            <div
+                class="cake-layer cake-middle"
+            ></div>
+
+
+            <div
+                class="cake-layer cake-bottom"
+            ></div>
+
+
+        </div>
+
+
+        <button
+            class="main-button"
+            onclick="goToScreen(3)"
+        >
+
+            📸 Voir nos souvenirs 💗
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     SCREEN 3
+================================================== -->
+
+<section
+    class="screen"
+    id="screen3"
+>
+
+    <div class="content">
+
+
+        <h2 class="photos-title">
+
+            Nos petits souvenirs 💕
+
+        </h2>
+
+
+        <div class="photo-area">
+
+
+            <!-- PHOTO 1 -->
+
+            <div class="polaroid photo1">
+
+                <img
+                    src="images/photo1.jpg"
+                    alt="Souvenir 1"
+                >
+
+                <span>
+
+                    Ma personne préférée 💗
+
+                </span>
+
+            </div>
+
+
+            <!-- PHOTO 2 -->
+
+            <div class="polaroid photo2">
+
+                <img
+                    src="images/photo2.jpg"
+                    alt="Souvenir 2"
+                >
+
+                <span>
+
+                    Toujours ensemble 🎀
+                </span>
+
+            </div>
+
+
+            <!-- PHOTO 3 -->
+
+            <div class="polaroid photo3">
+
+                <img
+                    src="images/photo3.jpg"
+                    alt="Souvenir 3"
+                >
+
+                <span>
+
+                    jtm trooop 💕
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            class="main-button"
+            onclick="goToScreen(4)"
+        >
+
+            💌 J'ai encore quelque chose
+            à te dire...
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     SCREEN 4
+================================================== -->
+
+<section
+    class="screen"
+    id="screen4"
+>
+
+    <div class="content">
+
+
+        <h2 class="photos-title">
+
+            Une lettre pour toi 💌
+
+        </h2>
+
+
+        <!-- ENVELOPE -->
+
+        <div
+            class="envelope"
+            id="envelope"
+            onclick="openLetter()"
+        >
+
+
+            <div
+                class="envelope-flap"
+            ></div>
+
+
+            <div
+                class="envelope-heart"
+            >
+
+                💗
+
+            </div>
+
+
+        </div>
+
+
+        <p class="click-text">
+
+            ✨ Clique sur l'enveloppe ✨
+
+        </p>
+
+
+        <!-- LETTER -->
+
+        <div
+            class="letter"
+            id="letter"
+        >
+
+
+            <h2>
+
+                Joyeux anniversaire Maman 💗
+
+            </h2>
+
+
+            <p>
+
+               Joyeux anniversaire à la plus importante personne de ma vie,
+               ma maman, ma confidente et celle qui a toujours été là pour moi. 🎂❤️
+
+
+            </p>
+
+
+            <br>
+
+
+            <p>
+
+               Je voulais te dire à quel point tu comptes pour moi.
+                Merci pour tout ton amour, ta patience, tes sacrifices 
+                et pour toutes les fois où tu as été à mes côtés, 
+                dans les bons comme dans les mauvais moments.
+
+            </p>
+
+
+            <br>
+
+
+            <p>
+
+                Je te souhaite tout le bonheur du monde, une longue vie,
+                beaucoup de santé et plein de beaux moments. ❤️
+
+            </p>
+
+            <br>
+            <p class="paris">
+
+                Joyeux anniversaire maman, je t'aime énormément. 🌷
+
+            </p>
+
+
+            <div class="signature">
+
+               
+                <br>
+
+                Ta fille 
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     MUSIC PLAYER
+================================================== -->
+
+<div class="music-player">
+
+
+    <button
+        class="music-button"
+        id="musicButton"
+        onclick="toggleMusic()"
+    >
+
+        🎵 Jouer la musique
+
+    </button>
+
+
+</div>
+
+
+<!-- ==================================================
+     MUSIC FILE
+================================================== -->
+
+<audio
+    id="musicAudio"
+    preload="auto"
+    loop
+>
+
+    <source
+        src="./music/birthday.mp3"
+        type="audio/mpeg"
+    >
+
+    Ton navigateur ne peut pas lire cette musique.
+
+</audio>
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script>
+
+
+/* ==================================================
+   CHANGER D'ÉCRAN
+================================================== */
+
+function goToScreen(number) {
+
+
+    const screens =
+        document.querySelectorAll(".screen");
+
+
+    screens.forEach(
+        function(screen) {
+
+            screen.classList.remove("active");
+
+        }
+    );
+
+
+    const nextScreen =
+        document.getElementById(
+            "screen" + number
+        );
+
+
+    nextScreen.classList.add("active");
+
+
+    createConfetti();
+
+}
+
+
+/* ==================================================
+   OUVRIR LA LETTRE
+================================================== */
+
+function openLetter() {
+
+
+    const envelope =
+        document.getElementById(
+            "envelope"
+        );
+
+
+    const letter =
+        document.getElementById(
+            "letter"
+        );
+
+
+    envelope.classList.toggle(
+        "open"
+    );
+
+
+    setTimeout(
+        function() {
+
+            letter.classList.toggle(
+                "show"
+            );
+
+
+            if (
+                letter.classList.contains(
+                    "show"
+                )
+            ) {
+
+                createConfetti();
+
+            }
+
+        },
+        400
+    );
+
+}
+
+
+/* ==================================================
+   MUSIQUE
+================================================== */
+
+function toggleMusic() {
+
+
+    const music =
+        document.getElementById(
+            "musicAudio"
+        );
+
+
+    const button =
+        document.getElementById(
+            "musicButton"
+        );
+
+
+    if (music.paused) {
+
+
+        music.play()
+
+            .then(
+                function() {
+
+                    button.innerHTML =
+                        "⏸️ Pause";
+
+                }
+            )
+
+            .catch(
+                function(error) {
+
+                    console.log(
+                        "Erreur audio :",
+                        error
+                    );
+
+
+                    alert(
+                        "La musique ne peut pas être lancée. Vérifie que le fichier birthday.mp3 est bien dans le dossier music."
+                    );
+
+                }
+            );
+
+
+    } else {
+
+
+        music.pause();
+
+
+        button.innerHTML =
+            "🎵 Jouer la musique";
+
+
+    }
+
+}
+
+
+/* ==================================================
+   CONFETTIS
+================================================== */
+
+function createConfetti() {
+
+
+    const items = [
+
+        "🎀",
+        "💗",
+        "💕",
+        "✨",
+        "🌸",
+        "🎉",
+        "💖"
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < 50;
+        i++
+    ) {
+
+
+        const confetti =
+            document.createElement(
+                "div"
+            );
+
+
+        confetti.className =
+            "confetti";
+
+
+        confetti.innerHTML =
+            items[
+                Math.floor(
+                    Math.random() *
+                    items.length
+                )
+            ];
+
+
+        confetti.style.left =
+            Math.random() *
+            100 +
+            "vw";
+
+
+        confetti.style.animationDuration =
+            2 +
+            Math.random() *
+            3 +
+            "s";
+
+
+        document.body.appendChild(
+            confetti
+        );
+
+
+        setTimeout(
+            function() {
+
+                confetti.remove();
+
+            },
+            5000
+        );
+
+    }
+
+}
+
+
+/* ==================================================
+   PETITS COEURS AUTOMATIQUES
+================================================== */
+
+setInterval(
+    function() {
+
+
+        const heart =
+            document.createElement(
+                "div"
+            );
+
+
+        heart.className =
+            "confetti";
+
+
+        heart.innerHTML =
+            [
+                "💗",
+                "💕",
+                "🎀",
+                "✨"
+            ][
+                Math.floor(
+                    Math.random() * 4
+                )
+            ];
+
+
+        heart.style.left =
+            Math.random() *
+            100 +
+            "vw";
+
+
+        heart.style.animationDuration =
+            4 +
+            Math.random() *
+            4 +
+            "s";
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        setTimeout(
+            function() {
+
+                heart.remove();
+
+            },
+            8000
+        );
+
+
+    },
+    1200
+);
+
+
+</script>
+
+
+</body>
+
+</html>
