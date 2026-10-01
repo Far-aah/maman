@@ -178,6 +178,30 @@ body::before{
 .confetti{position:fixed;top:-30px;z-index:200;font-size:20px;pointer-events:none;animation:fall 4s linear forwards}
 @keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
 
+/* ---------- Retour ---------- */
+.back{position:fixed;top:max(14px,env(safe-area-inset-top));left:max(14px,env(safe-area-inset-left));z-index:130;border:none;border-radius:50px;padding:10px 18px;cursor:pointer;font:600 14px "Poppins",sans-serif;color:var(--rose-deep);background:rgba(255,255,255,.85);backdrop-filter:blur(8px);box-shadow:0 6px 16px rgba(150,40,90,.18);transition:transform .3s}
+.back:hover{transform:translateX(-3px) scale(1.04)}
+.back:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* ---------- Progression ---------- */
+.dots{position:fixed;top:max(16px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:120;display:flex;gap:8px;padding:8px 14px;border-radius:30px;background:rgba(255,255,255,.7);backdrop-filter:blur(8px);box-shadow:0 6px 16px rgba(150,40,90,.15)}
+.dots i{width:9px;height:9px;border-radius:9px;background:#ffb7d3;transition:width .4s,background .4s}
+.dots i.on{width:26px;background:var(--rose)}
+
+/* ---------- Photo agrandie ---------- */
+.polaroid{cursor:zoom-in}
+.lightbox{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;background:rgba(120,30,70,.55);backdrop-filter:blur(6px);padding:20px;cursor:zoom-out}
+.lightbox.show{display:flex;animation:enter .4s}
+.lightbox figure{background:#fff;padding:14px 14px 18px;border-radius:6px;transform:rotate(-2deg);box-shadow:0 30px 60px rgba(0,0,0,.35);max-width:min(520px,92vw)}
+.lightbox img{display:block;width:100%;max-height:68vh;object-fit:contain;background:var(--rose-soft)}
+.lightbox figcaption{margin-top:12px;font-family:"Caveat",cursive;font-weight:700;font-size:28px;color:var(--rose-deep);text-align:center}
+
+/* ---------- Étincelles ---------- */
+.spark{position:fixed;z-index:250;pointer-events:none;font-size:14px;animation:spark .9s ease-out forwards}
+@keyframes spark{to{transform:translate(var(--dx,0),var(--dy,30px)) scale(.2) rotate(120deg);opacity:0}}
+.screen.active h1.welcome,.screen.active .birthday{background:linear-gradient(90deg,#e8458b,#ff8fbf,#e8458b);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-shadow:none;filter:drop-shadow(3px 3px 0 #fff) drop-shadow(0 10px 14px rgba(200,50,110,.2));animation:enter .8s,sheen 5s linear infinite}
+@keyframes sheen{to{background-position:200% 0}}
+
 /* ---------- Mobile ---------- */
 @media(max-width:650px){
   .sticker{width:62px}
@@ -222,6 +246,7 @@ body::before{
 
 <!-- ÉCRAN 2 -->
 <section class="screen" id="screen2">
+  <button class="back" onclick="goToScreen(1)">← Retour</button>
   <div class="content">
     <div class="title birthday">HAPPY<br>BIRTHDAY<small>Ma copine 🎀</small></div>
     <p class="subtitle">🎉 Aujourd'hui est une journée spéciale 🎉</p>
@@ -241,6 +266,7 @@ body::before{
 
 <!-- ÉCRAN 3 -->
 <section class="screen" id="screen3">
+  <button class="back" onclick="goToScreen(2)">← Retour</button>
   <div class="content">
     <h2 class="title photos-title">Nos petits souvenirs 💕</h2>
     <div class="photo-area">
@@ -254,6 +280,7 @@ body::before{
 
 <!-- ÉCRAN 4 -->
 <section class="screen" id="screen4">
+  <button class="back" onclick="goToScreen(3)">← Retour</button>
   <div class="content">
     <h2 class="title photos-title">Une lettre pour toi 💌</h2>
 
@@ -282,6 +309,12 @@ body::before{
   </div>
 </section>
 
+<div class="dots" id="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+
+<div class="lightbox" id="lightbox" onclick="this.classList.remove('show')">
+  <figure><img id="lbImg" src="" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+
 <!-- MUSIQUE -->
 <div class="music-player">
   <button class="music-btn" id="musicButton" onclick="toggleMusic()">🎵 Jouer la musique</button>
@@ -296,8 +329,29 @@ function goToScreen(n){
   document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
   document.getElementById("screen"+n).classList.add("active");
   window.scrollTo({top:0});
+  document.querySelectorAll("#dots i").forEach((d,i)=>d.classList.toggle("on",i===n-1));
   createConfetti();
 }
+
+document.querySelectorAll(".polaroid").forEach(p=>p.addEventListener("click",()=>{
+  document.getElementById("lbImg").src=p.querySelector("img").src;
+  document.getElementById("lbCap").textContent=p.querySelector("span").textContent;
+  document.getElementById("lightbox").classList.add("show");
+}));
+
+function spark(x,y,emoji,spread){
+  const s=document.createElement("span");
+  s.className="spark";s.textContent=emoji;
+  s.style.left=x+"px";s.style.top=y+"px";
+  s.style.setProperty("--dx",(Math.random()-.5)*spread+"px");
+  s.style.setProperty("--dy",(Math.random()*spread*.8+10)+"px");
+  document.body.appendChild(s);
+  setTimeout(()=>s.remove(),900);
+}
+addEventListener("pointerdown",e=>{
+  if(e.target.closest(".lightbox"))return;
+  for(let i=0;i<7;i++)spark(e.clientX,e.clientY,["💗","💕","🎀"][i%3],120);
+});
 
 function blowCandles(){
   const cake=document.getElementById("cake");
